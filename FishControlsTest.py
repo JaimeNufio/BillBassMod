@@ -16,37 +16,31 @@ active = True
 control.initMotor(motors);
 
 try:
+    control.motorOn(motor1);
+        
+except KeyboardInterrupt:
+    pass
+
+control.end(motors)
+
+"""
     while active:
         time.sleep(1)
-        tempMotorState = [False,False,False]
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
                 pygame.quit()
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_q:
-                    tempMotorState[0]=True
+                    control.motorOn(motors[0]);
                 if event.key == pygame.K_w:
-                    tempMotorState[0]=False
+                    control.motorOff(motors[0]);
                 if event.key == pygame.K_a:
-                    tempMotorState[1]=True
+                    control.motorOn(motors[1]);
                 if event.key == pygame.K_s:
-                    tempMotorState[1]=False
+                    control.motorOff(motors[1]);
                 if event.key == pygame.K_z:
-                    tempMotorState[2]=True
+                    control.motorOn(motors[2]);
                 if event.key == pygame.K_x:
-                    tempMotorState[2]=False
-        print(tempMotorState);
-        for i in range(len(tempMotorState)):
-            if tempMotorState[i]:
-                control.motorOn(motors[i]);
-            else:
-                control.motorOff(motors[i]);
-            
-                
-
-except KeyboardInterrupt:
-    pass
-
-control.end(motors)
-
+                    control.motorOff(motors[2]);
+"""

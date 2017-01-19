@@ -8,9 +8,9 @@ Easier Ussage of these basic ideas for me.
 def initMotor(motorset):
     io.setmode(io.BCM)
     for motor in motorset:
-    	io.setup(motor[0],io.OUT)
-    	io.setup(motor[1],io.OUT)
-
+        for out in motor:
+            io.setup(out,io.OUT)#initialize
+            io.output(out,0) #turn off
     print("motors Init'd")
 	
 def motorForward(motor):
@@ -18,12 +18,12 @@ def motorForward(motor):
     io.output(motor[1],1)
 
 def motorBackward(motor):
-    io.output(motor[0],1)
-    io.output(motor[1],0)
+    io.output(motor[0],0)
+    io.output(motor[1],1)
 
 def motorOff(motor):
-    io.output(motor[0],0)
-    io.output(motor[1],0)
+    for out in motor:
+        io.output(out,0)
 
 def end(motors):
     for motor in motors:

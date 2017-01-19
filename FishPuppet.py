@@ -1,28 +1,30 @@
-import MotorControl as control
+import RPi.GPIO as io;
+import MotorControl as control;
 import pygame
 import time
 
-motor1 = [17,27];
-motor2 = [5,6]
-motor3 = [24,23]
-motors = [motor1,motor2,motor3];
-motorState = [False,False,False];
 
-pygame.init()
-pygame.display.set_mode((1,1))#screensize
-running = True
-active = True
- 
+io.setwarnings(False);
+
+motor1 = [11,13];
+motor2 = [29,31];
+motor3 = [16,18];
+motors = [motor1,motor2,motor3];
+
+#pygame.init()
+#pygame.display.set_mode((1,1))#screensize
+
 control.initMotor(motors);
 
-try:
-    while True:
-        control.motorOn(motor2)
+for motor in motors:
+	control.motorForward(motor);
+
+time.sleep(5);
+
+for motor in motors:
+	control.motorBackward(motor);
 
 
+for motor in motors:
+	control.motorOff(motor);
 
-except KeyboardInterrupt:
-    pass
-
-control.end(motors)
-print("end")
