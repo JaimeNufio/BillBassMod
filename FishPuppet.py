@@ -6,9 +6,9 @@ import time
 
 io.setwarnings(False);
 
-motor1 = [11,13];
-motor2 = [29,31];
-motor3 = [16,18];
+motor1 = [17,27];
+motor2 = [5,6];
+motor3 = [23,24];
 motors = [motor1,motor2,motor3];
 
 #pygame.init()

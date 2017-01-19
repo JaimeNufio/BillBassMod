@@ -6,10 +6,11 @@ Easier Ussage of these basic ideas for me.
 
 
 def initMotor(motorset):
-    io.setmode(io.BCM)
+    io.setwarnings(False);
+    io.setmode(io.BCM);
     for motor in motorset:
     	io.setup(motor[0],io.OUT)
-    	io.setup(motor[1],io.OUT)
+    	io.setup(motor[0],io.OUT)
 
     print("motors Init'd")
 	
