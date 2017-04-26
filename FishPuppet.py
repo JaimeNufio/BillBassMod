@@ -13,7 +13,6 @@ motors = [motor1,motor2,motor3];
 
 control.initMotor(motors);
 
-
 for motor in motors:
 	control.motorForward(motor);
 
