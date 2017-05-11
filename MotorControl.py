@@ -31,18 +31,11 @@ def motorBackward(motor):
 #    motorOff(motor)
 
 def motorOff(motor):
-    io.setmode(io.BCM)
-
-def motorOff(motor):
     io.output(motor[0],0)
     io.output(motor[1],0)
 
 def end(motors):
     io.setmode(io.BCM)
-    for motor in motors:
-        motorOff(motor)
-#    io.cleanup()
-
     for motor in motors:
         motorOff(motor)
     io.cleanup()

@@ -3,6 +3,7 @@ import MotorControl as control
 import pygame
 import time
 import pyttsx
+
 """
 engine = pyttsx.init()
 
@@ -10,9 +11,6 @@ def speak(words):
 	engine.say(words)
 	engine.runAndWait();
 """	
-import MotorControl as control;
-import pygame
-import time
 
 pygame.init();
 pygame.display.set_mode((1,1));
@@ -76,10 +74,3 @@ while active:
 				speak("Hello")
 				control.motorBackward(motor2)
 				control.motorOff(motor2)
-while True:
-	events = pygame.event.get()
-	for event in events:
-		if event.type == pygame.KEYDOWN:
-			if event.key == pygame.K_q:
-					control.motorForward(motor1)
-
