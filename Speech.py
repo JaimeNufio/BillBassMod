@@ -19,17 +19,17 @@ def dummyTalk(): #do something while talking
 	count = -1;
 	while True:
 		if pygame.mixer.music.get_busy():
-			pygame.time.delay(100);
+			pygame.time.delay(150);
 			print(count);	
 			count*=-1;
 
 #speakWords("Text speech working fine.");
 
 # threads
-"""
+#"""
 thread.start_new_thread(speakWords,("Currently testing if threading works with this setup",))
 thread.start_new_thread(dummyTalk,());
 
 while 1:
 	pass;
-"""
+#"""
