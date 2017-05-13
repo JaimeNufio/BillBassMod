@@ -27,13 +27,11 @@ def dummyTalk(mSet): #do something while talking
 				motor.motorOn(mSet);
 			else:
 				motor.motorOff(mSet);
+	motor.Off(mSet);
 
 def fishyTalk(mSet,text):
-	
-
 	thread.start_new_thread(speakWords,(text,))
 	thread.start_new_thread(dummyTalk,(mSet));
-
 	while pygame.mixer.music.get_busy():
 		pass;
 	

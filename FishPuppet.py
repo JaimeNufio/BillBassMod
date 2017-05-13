@@ -1,5 +1,6 @@
 import RPi.GPIO as io;
 import MotorControl as control
+import Speech as talky
 import pygame
 import time
 import pyttsx
@@ -70,7 +71,8 @@ while active:
 				print("End.")
 				io.cleanup()
 			if event.key == pygame.K_f:
-				control.motorForward(motor2)
-				speak("Hello")
-				control.motorBackward(motor2)
-				control.motorOff(motor2)
+				print("Empty");
+			if event.key == pyhame.K_t;
+				print("Talk Button");
+				talky.fishyTalk(motor2,"Hello World!");
+
