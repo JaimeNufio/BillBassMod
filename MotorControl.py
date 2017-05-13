@@ -12,7 +12,7 @@ def resetMotor(motorset):
     	io.setup(motor[0],io.OUT)
         io.output(motor[1],0)
         io.output(motor[0],0)
-    	print("Setup motors: "+str(motor[0])+" and "+str(motor[1])");
+    	print("Setup motors: "+str(motor[0])+" and "+str(motor[1]));
 	print("motors Init'd")
 	
 def motorForward(motor):
