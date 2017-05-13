@@ -4,7 +4,7 @@ import RPi.GPIO as io;
 Easier Ussage of these basic ideas for me.
 """
 
-def initMotor(motorset):
+def resetMotor(motorset):
     io.setwarnings(False);
     io.setmode(io.BCM);
     for motor in motorset:
@@ -12,9 +12,7 @@ def initMotor(motorset):
     	io.setup(motor[0],io.OUT)
         io.output(motor[1],0)
         io.output(motor[0],0)
-        
-
-    print("motors Init'd")
+        print("motors Init'd")
 	
 def motorForward(motor):
 
@@ -34,9 +32,13 @@ def motorOff(motor):
     io.output(motor[0],0)
     io.output(motor[1],0)
 
+def allOff(motors):
+    io.setmode(io.BCM)
+    for motor in motors:
+        motorOff(motor)
+
 def end(motors):
     io.setmode(io.BCM)
     for motor in motors:
         motorOff(motor)
     io.cleanup()
-    print("done!");

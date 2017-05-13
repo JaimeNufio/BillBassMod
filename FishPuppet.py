@@ -20,7 +20,12 @@ motor2 = [5,6];
 motor3 = [23,24];
 motors = [motor1,motor2,motor3];
 
-control.initMotor(motors);
+io.setmode(io.BCM);
+io.setup(motor1,io.OUT);
+io.setup(motor2,io.OUT);
+io.setup(motor3,io.OUT);
+
+control.resetMotor(motors);
 
 for motor in motors:
 	control.motorForward(motor);
@@ -31,7 +36,7 @@ for motor in motors:
 	control.motorBackward(motor);
 time.sleep(1);
 
-control.end(motors);
+control.allOff(motors);
 
 active = True
 
