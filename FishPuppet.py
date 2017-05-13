@@ -5,11 +5,6 @@ import time
 import pyttsx
 
 """
-engine = pyttsx.init()
-
-def speak(words):
-	engine.say(words)
-	engine.runAndWait();
 """	
 
 pygame.init();
@@ -20,10 +15,10 @@ motor2 = [5,6];
 motor3 = [23,24];
 motors = [motor1,motor2,motor3];
 
-io.setmode(io.BCM);
-io.setup(motor1,io.OUT);
-io.setup(motor2,io.OUT);
-io.setup(motor3,io.OUT);
+#io.setmode(io.BCM);
+#io.setup(motor1,io.OUT);
+#io.setup(motor2,io.OUT);
+#io.setup(motor3,io.OUT);
 
 control.resetMotor(motors);
 

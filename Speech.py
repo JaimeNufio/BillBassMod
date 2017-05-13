@@ -26,10 +26,10 @@ def dummyTalk(): #do something while talking
 #speakWords("Text speech working fine.");
 
 # threads
-#"""
+"""
 thread.start_new_thread(speakWords,("Currently testing if threading works with this setup",))
 thread.start_new_thread(dummyTalk,());
 
 while 1:
 	pass;
-#"""
+"""
