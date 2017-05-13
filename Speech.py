@@ -1,6 +1,6 @@
 from gtts import gTTS
 import pygame, time, thread
-
+import MotorControl as motor
 
 pygame.mixer.init();
 
@@ -15,13 +15,29 @@ def speakWords(text): #From text, speak
 	while pygame.mixer.music.get_busy():
 		pygame.time.delay(100);
 
-def dummyTalk(): #do something while talking
+def dummyTalk(mSet): #do something while talking
 	count = -1;
 	while True:
 		if pygame.mixer.music.get_busy():
 			pygame.time.delay(150);
+			motor.motorOff(mSet);
 			print(count);	
 			count*=-1;
+			if count > 0:
+				motor.motorOn(mSet);
+			else:
+				motor.motorOff(mSet);
+
+def fishyTalk(mSet,text):
+	
+
+	thread.start_new_thread(speakWords,(text,))
+	thread.start_new_thread(dummyTalk,(mSet));
+
+	while pygame.mixer.music.get_busy():
+		pass;
+	
+	print("Finished Speaking");
 
 #speakWords("Text speech working fine.");
 
