@@ -6,8 +6,8 @@ pygame.mixer.init();
 
 def speakWords(text): #From text, speak
 	phrase=text;
-	tts = gTTS(text=phrase, lang='en', slow = False)
-	tts.save("ttsText.mp3");
+	#tts = gTTS(text=phrase, lang='en', slow = False)
+	#tts.save("ttsText.mp3");
 
 	pygame.mixer.music.load("ttsText.mp3");
 	pygame.mixer.music.play(0);
@@ -31,7 +31,7 @@ def dummyTalk(mSet): #do something while talking
 
 def fishyTalk(mSet,text):
 	thread.start_new_thread(speakWords,(text,))
-	thread.start_new_thread(dummyTalk,(mSet));
+	thread.start_new_thread(dummyTalk,(mSet,));
 	while pygame.mixer.music.get_busy():
 		pass;
 	

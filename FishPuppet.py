@@ -72,7 +72,7 @@ while active:
 				io.cleanup()
 			if event.key == pygame.K_f:
 				print("Empty");
-			if event.key == pyhame.K_t;
+			if event.key == pygame.K_t:
 				print("Talk Button");
 				talky.fishyTalk(motor2,"Hello World!");
 
