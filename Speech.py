@@ -10,8 +10,8 @@ def speakWords(text): #From text, speak
 	#For now it'll suffice to just play prerecorded audio	
 
 	phrase=text;
-#	tts = gTTS(text=phrase, lang='en')
-#	tts.save("ttsText.mp3");
+	tts = gTTS(text=phrase, lang='en')
+	tts.save("ttsText.mp3");
 
 	pygame.mixer.init();
 	pygame.mixer.music.load("ttsText.mp3");
@@ -41,7 +41,6 @@ def dummyTalk(mSet): #do something while talking
 				motor.motorOff(mSet);
 	motor.Off(mSet);
 
-#TODO Manange threads from FishPuppet.py
 """
 def fishyTalk(mSet,text):
 	thread.start_new_thread(speakWords,(text,))
