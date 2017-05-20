@@ -9,9 +9,9 @@ def speakWords(text): #From text, speak
 	#TODO Implement the recording of new audio 
 	#For now it'll suffice to just play prerecorded audio	
 
-	#phrase=text;
-	#tts = gTTS(text=phrase, lang='en', slow = False)
-	#tts.save("ttsText.mp3");
+	phrase=text;
+#	tts = gTTS(text=phrase, lang='en')
+#	tts.save("ttsText.mp3");
 
 	pygame.mixer.init();
 	pygame.mixer.music.load("ttsText.mp3");
@@ -64,4 +64,4 @@ while 1:
 	pass;
 """
 
-speakWords("It finally worked!");
+#speakWords("Fish Bot is opperational!");
